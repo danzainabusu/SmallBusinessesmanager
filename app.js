@@ -62,3 +62,34 @@ getStartedBtn.addEventListener("click", function () {
 loginBtn.addEventListener("click", function () {
   console.log("Login clicked");
 });
+
+/* =========================================
+   REGISTER SERVICE WORKER
+========================================= */
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener("load", () => {
+
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then(registration => {
+
+        console.log(
+          "SBM Service Worker registered:",
+          registration.scope
+        );
+
+      })
+      .catch(error => {
+
+        console.error(
+          "SBM Service Worker registration failed:",
+          error
+        );
+
+      });
+
+  });
+
+}
