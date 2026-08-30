@@ -1,0 +1,861 @@
+/* =====================================================
+   SMALL BUSINESS MANAGER
+   SPLASH + WELCOME
+===================================================== */
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+  --yellow: #facc15;
+
+  --yellow-dark: #eab308;
+
+  --yellow-soft: #fff7d6;
+
+  --navy: #111827;
+
+  --text: #374151;
+
+  --muted: #6b7280;
+
+  --white: #ffffff;
+
+  --border: #e5e7eb;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+html {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  width: 100%;
+
+  min-height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #f5f5f5;
+
+  color: var(--navy);
+
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+/* =====================================================
+   SPLASH SCREEN
+===================================================== */
+
+.splash-screen {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background: var(--white);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+/* Hide splash */
+
+.splash-screen.hide {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   SPLASH CONTENT
+===================================================== */
+
+.splash-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform: translateY(-15px);
+
+  animation: splashAppear 0.8s ease forwards;
+}
+
+/* =====================================================
+   SPLASH LOGO
+===================================================== */
+
+.splash-logo {
+  width: 390px;
+
+  max-width: 88vw;
+
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin-bottom: 70px;
+}
+
+/* /* =========================================
+   SPLASH SCREEN
+========================================= */
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+.splash-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* =========================================
+   SPLASH CONTENT
+========================================= */
+
+.splash-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateY(-20px);
+
+  animation: splashAppear 0.8s ease forwards;
+}
+
+/* =========================================
+   COMPLETE LOGO
+========================================= */
+
+.splash-logo {
+  display: block;
+
+  width: 360px;
+  max-width: 82vw;
+
+  height: auto;
+
+  object-fit: contain;
+
+  margin-bottom: 52px;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.loading-dots {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.loading-dots span {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #facc15;
+
+  animation: loadingDot 1.2s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.loading p {
+  margin-top: 12px;
+
+  font-size: 16px;
+
+  color: #374151;
+}
+
+/* =========================================
+   SPLASH WAVE
+========================================= */
+
+.splash-wave {
+  position: absolute;
+
+  z-index: 1;
+
+  left: -8%;
+
+  bottom: -5px;
+
+  width: 116%;
+
+  height: 185px;
+
+  background: #facc15;
+
+  border-radius: 50% 50% 0 0 / 45% 45% 0 0;
+
+  transform: rotate(-3deg);
+}
+
+/* White cut-out that creates the wave */
+
+.splash-wave::before {
+  content: "";
+
+  position: absolute;
+
+  left: -5%;
+
+  top: -95px;
+
+  width: 110%;
+
+  height: 150px;
+
+  background: #ffffff;
+
+  border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+}
+/* =====================================================
+   WELCOME SCREEN
+===================================================== */
+
+.welcome-screen {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 480px;
+
+  min-height: 100vh;
+
+  background: var(--white);
+
+  overflow: hidden;
+
+  padding: 28px 24px 30px;
+}
+
+/* =====================================================
+   DECORATIVE CIRCLES
+===================================================== */
+
+.top-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(250, 204, 21, 0.13);
+
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 210px;
+
+  height: 210px;
+
+  top: -115px;
+
+  right: -95px;
+}
+
+.circle-two {
+  width: 125px;
+
+  height: 125px;
+
+  top: 170px;
+
+  right: -58px;
+}
+
+/* =====================================================
+   BOTTOM DECORATION
+===================================================== */
+
+.bottom-decoration {
+  position: absolute;
+
+  z-index: 0;
+
+  width: 500px;
+
+  height: 330px;
+
+  right: -250px;
+
+  bottom: -195px;
+
+  border-radius: 50%;
+
+  background: rgba(250, 204, 21, 0.12);
+
+  transform: rotate(-12deg);
+}
+
+.bottom-decoration::after {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+
+  height: 270px;
+
+  right: 80px;
+
+  bottom: 90px;
+
+  border-radius: 50%;
+
+  background: rgba(250, 204, 21, 0.08);
+}
+
+/* =====================================================
+   WELCOME CONTENT
+===================================================== */
+
+.welcome-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  animation: welcomeAppear 0.7s ease forwards;
+}
+
+/* =====================================================
+   WELCOME LOGO
+===================================================== */
+
+.welcome-logo {
+  display: block;
+
+  width: 285px;
+
+  max-width: 88%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  margin-bottom: 30px;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+h1 {
+  max-width: 400px;
+
+  color: var(--navy);
+
+  font-size: 38px;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.3px;
+
+  font-weight: 800;
+
+  margin-bottom: 20px;
+}
+
+h1 span {
+  display: block;
+
+  color: var(--yellow-dark);
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description {
+  max-width: 405px;
+
+  color: var(--text);
+
+  font-size: 16px;
+
+  line-height: 1.55;
+
+  margin-bottom: 27px;
+}
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+
+  margin-bottom: 25px;
+}
+
+/* =====================================================
+   FEATURE
+===================================================== */
+
+.feature {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+/* =====================================================
+   FEATURE ICON
+===================================================== */
+
+.feature-icon {
+  flex-shrink: 0;
+
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: var(--yellow-soft);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--navy);
+
+  font-size: 23px;
+}
+
+/* =====================================================
+   FEATURE INFORMATION
+===================================================== */
+
+.feature-info {
+  flex: 1;
+}
+
+.feature-info h3 {
+  color: var(--navy);
+
+  font-size: 17px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.feature-info p {
+  color: var(--text);
+
+  font-size: 14px;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.actions {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+/* =====================================================
+   GET STARTED
+===================================================== */
+
+.get-started {
+  width: 100%;
+
+  min-height: 58px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: var(--yellow);
+
+  color: var(--navy);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 14px 20px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.23);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.get-started i {
+  font-size: 20px;
+
+  transition: transform 0.2s ease;
+}
+
+.get-started:hover {
+  background: var(--yellow-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(250, 204, 21, 0.28);
+}
+
+.get-started:hover i {
+  transform: translateX(5px);
+}
+
+.get-started:active {
+  transform: scale(0.98);
+}
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-button {
+  width: 100%;
+
+  min-height: 55px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  background: var(--white);
+
+  color: var(--text);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 13px 18px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.login-button strong {
+  color: var(--yellow-dark);
+
+  font-weight: 700;
+}
+
+.login-button:hover {
+  border-color: var(--yellow);
+
+  background: #fffdf4;
+}
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+.security {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 23px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.security-icon {
+  width: 29px;
+
+  height: 29px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  color: var(--navy);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   SPLASH ANIMATION
+========================================= */
+
+@keyframes splashAppear {
+  from {
+    opacity: 0;
+
+    transform: translateY(-10px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(-20px) scale(1);
+  }
+}
+
+@keyframes loadingDot {
+  0%,
+  100% {
+    opacity: 0.3;
+
+    transform: scale(0.75);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.15);
+  }
+}
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+  .welcome-screen {
+    padding: 25px 19px 25px;
+  }
+
+  .welcome-logo {
+    width: 250px;
+
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .feature {
+    gap: 12px;
+  }
+
+  .feature-icon {
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 20px;
+  }
+
+  .feature-info h3 {
+    font-size: 15px;
+  }
+
+  .feature-info p {
+    font-size: 12px;
+  }
+
+  .splash-logo {
+    width: 330px;
+
+    margin-bottom: 55px;
+  }
+}
+
+/* =====================================================
+   DESKTOP / TABLET
+===================================================== */
+
+@media (min-width: 700px) {
+  body {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+  }
+
+  .app {
+    min-height: 720px;
+  }
+
+  .welcome-screen {
+    min-height: 720px;
+
+    border-radius: 28px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+  }
+
+  .splash-screen {
+    width: 480px;
+
+    left: 50%;
+
+    right: auto;
+
+    transform: translateX(-50%);
+
+    border-radius: 28px;
+  }
+}
